@@ -1,12 +1,48 @@
+body {
+  padding: 30px;
+  font-family: "Signika Negative", sans-serif;
+}
+#Today {
+  color: #5b5b5a;
+  font-style: oblique;
+}
+
 h1 {
   font-size: 100px;
+  color: #413932;
+}
+#qualification {
+  color: #5b5b5a;
+}
+#date {
+  color: #5b5b5a;
+  font-size: 15px;
+}
+#time {
+  color: #5b5b5a;
+  font-size: 15px;
+}
+#feeling {
+  font-size: 24px;
+  color: #5b5b5a;
+}
+#temp {
+  font-size: 24px;
+  color: #5b5b5a;
+}
+#details {
+  color: #5b5b5a;
+  font-style: oblique;
+}
+#currenttemprature {
+  color: #413932;
 }
 
 .header {
   display: block;
   margin: 0 auto;
   position: fixed;
-  font-family: "Signika Negative", sans-serif;
+
   font-weight: 400;
 }
 
@@ -19,7 +55,14 @@ h1 {
   position: relative;
   right: -10px;
   text-align: center;
-  font-family: "Heebo", sans-serif;
+}
+#currentcard {
+  background: linear-gradient(0.45turn, #fafafa, #9abee2, #5a7da9);
+  height: 650px;
+}
+
+#predictionforcast {
+  height: 650px;
 }
 
 #measure {
@@ -27,6 +70,7 @@ h1 {
   position: relative;
   top: -10px;
   font-size: 13px;
+  color: #5a5654;
 }
 
 .current-icon {
@@ -35,7 +79,6 @@ h1 {
 .containerbox {
   position: relative;
   left: -20px;
-  font-family: "Heebo", sans-serif;
 }
 .searchbox {
   display: block;
@@ -45,13 +88,10 @@ h1 {
   display: block;
   margin: 0 auto;
   width: 500px;
-  font-family: "Heebo", sans-serif;
 }
 .weekdaysbox {
   display: block;
   margin: 0 auto;
-
-  font-family: "Heebo", sans-serif;
 }
 .days {
   text-align: center;
@@ -59,7 +99,6 @@ h1 {
 .hourbox {
   display: block;
   margin: 0 auto;
-  font-family: "Heebo", sans-serif;
 }
 .hours {
   text-align: center;

@@ -15,7 +15,11 @@ function changetime() {
   let realminute = now.getMinutes();
 
   let changetime = document.querySelector("#time");
-  changetime.innerHTML = `${realhour} : ${realminute}`;
+  if (realminute < 10) {
+    changetime.innerHTML = `${realhour} : 0${realminute}`;
+  } else {
+    changetime.innerHTML = `${realhour} : ${realminute}`;
+  }
 
   let changeweekday = document.querySelector("#date");
   changeweekday.innerHTML = weekday;
@@ -46,10 +50,24 @@ function citysearch(event) {
 
   function showCityTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
-
     let htmltemp = document.querySelector("#currenttemprature");
-
     htmltemp.innerHTML = temperature;
+
+    let wind = response.data.wind.speed;
+    let htmlWind = document.querySelector("#wind");
+    htmlWind.innerHTML = `Wind: ${wind}km/h`;
+
+    let feeling = Math.round(response.data.main.feels_like);
+    let htmlfeeling = document.querySelector("#feeling");
+    htmlfeeling.innerHTML = `Feels like ${feeling}°`;
+
+    let humidity = Math.round(response.data.main.humidity);
+    let htmlhumidity = document.querySelector("#humidity");
+    htmlhumidity.innerHTML = `Humidity: ${feeling}%`;
+
+    let qualification = response.data.weather[0].description;
+    let htmlqualification = document.querySelector("#qualification");
+    htmlqualification.innerHTML = `${qualification}`;
   }
 
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
