@@ -42,12 +42,14 @@ h1 {
   margin: 0 auto;
 }
 .btn-secondary {
-  position: relative;
+  display: block;
+  margin: 0 auto;
   font-family: "Heebo", sans-serif;
 }
 .weekdaysbox {
   display: block;
   margin: 0 auto;
+
   font-family: "Heebo", sans-serif;
 }
 .days {
