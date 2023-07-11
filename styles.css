@@ -10,15 +10,14 @@ body {
 h1 {
   font-size: 100px;
   color: #413932;
+  text-transform: capitalize;
 }
 #qualification {
   color: #5b5b5a;
+  text-transform: capitalize;
 }
+
 #date {
-  color: #5b5b5a;
-  font-size: 15px;
-}
-#time {
   color: #5b5b5a;
   font-size: 15px;
 }

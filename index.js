@@ -1,5 +1,5 @@
-function changetime() {
-  let now = new Date();
+function changetime(timestamp) {
+  let now = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -10,19 +10,22 @@ function changetime() {
     "Saturday",
   ];
   let weekday = days[now.getDay()];
-
   let realhour = now.getHours();
   let realminute = now.getMinutes();
-
-  let changetime = document.querySelector("#time");
-  if (realminute < 10) {
-    changetime.innerHTML = `${realhour} : 0${realminute}`;
-  } else {
-    changetime.innerHTML = `${realhour} : ${realminute}`;
+  if (realhour < 10) {
+    realhour = `0${realhour}`;
   }
+  if (realminute < 10) {
+    realminute = `0${realminute}`;
+  }
+  return `${weekday} <br> ${realhour}:${realminute} `;
+}
+function formatDay(timestamp) {
+  let now = new Date(timestamp * 1000);
+  let weekday = now.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  let changeweekday = document.querySelector("#date");
-  changeweekday.innerHTML = weekday;
+  return days[weekday];
 }
 
 function converttofarenheit(event) {
@@ -68,6 +71,9 @@ function citysearch(event) {
     let qualification = response.data.weather[0].description;
     let htmlqualification = document.querySelector("#qualification");
     htmlqualification.innerHTML = `${qualification}`;
+
+    let dateElement = document.querySelector("#date");
+    dateElement.innerHTML = changetime(response.data.dt * 1000);
   }
 
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
