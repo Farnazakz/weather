@@ -47,7 +47,7 @@ h1 {
 .currentbox {
   display: block;
   margin: 0 auto;
-  right: 100px;
+  right: 150px;
 }
 #currentcard {
   text-align: center;
@@ -77,7 +77,7 @@ h1 {
 .containerbox {
   display: block;
   margin: 0 auto;
-  right: 100px;
+  right: 150px;
   text-align: center;
 }
 .wd {
