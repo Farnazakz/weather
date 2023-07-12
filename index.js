@@ -30,22 +30,21 @@ function formatDay(timestamp) {
 
 function converttofarenheit(event) {
   event.preventDefault();
+
   let degree = document.querySelector("#currenttemprature");
-  let farenheitdegree = degree.innerHTML;
-  degree.innerHTML = Math.round((farenheitdegree * 9) / 5 + 32);
+  degree.innerHTML = Math.round((celsiusElement * 9) / 5 + 32);
 }
 
 function converttocelicious(event) {
   event.preventDefault();
+
   let degree = document.querySelector("#currenttemprature");
-  let celiciousdegree = degree.innerHTML;
-  degree.innerHTML = Math.round(((celiciousdegree - 32) * 5) / 9);
+  degree.innerHTML = celsiusElement;
 }
 
 function citysearch(event) {
   event.preventDefault();
   let searchinput = document.querySelector("#searchedcity");
-  console.log(searchinput);
   let newcity = document.querySelector("#city");
   let citytoweather = `${searchinput.value}`;
   newcity.innerHTML = citytoweather;
@@ -53,6 +52,8 @@ function citysearch(event) {
   //change city and getting real weather data//
 
   function showCityTemperature(response) {
+    celsiusElement = Math.round(response.data.temperature.current);
+
     let temperature = Math.round(response.data.temperature.current);
     let htmltemp = document.querySelector("#currenttemprature");
     htmltemp.innerHTML = temperature;
@@ -94,6 +95,8 @@ function citysearch(event) {
 
 changetime();
 
+let celsiusElement = null;
+
 let searchelement = document.querySelector("#searching");
 searchelement.addEventListener("submit", citysearch);
 
@@ -129,4 +132,3 @@ function retrievePosition(position) {
 
 let currentLocationTemp = document.querySelector("#btnsecondary");
 currentLocationTemp.addEventListener("click", findLocation);
-

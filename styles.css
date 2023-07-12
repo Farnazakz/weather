@@ -2,6 +2,13 @@ body {
   padding: 10px;
   font-family: "Signika Negative", sans-serif;
 }
+.temprature.active {
+  color: #5b5b5a;
+  cursor: default;
+}
+.temprature.active:hover {
+  text-decoration: none;
+}
 #searching {
   display: block;
   margin-left: auto;
@@ -131,6 +138,7 @@ h1 {
   text-align: center;
   font-size: 10px;
 }
+
 #source {
   text-align: center;
   font-size: 10px;
