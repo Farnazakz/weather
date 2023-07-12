@@ -52,33 +52,38 @@ function citysearch(event) {
   //change city and getting real weather data//
 
   function showCityTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
+    console.log(response);
+    let temperature = Math.round(response.data.temperature.current);
     let htmltemp = document.querySelector("#currenttemprature");
     htmltemp.innerHTML = temperature;
-
+    
     let wind = response.data.wind.speed;
     let htmlWind = document.querySelector("#wind");
     htmlWind.innerHTML = `Wind: ${wind}km/h`;
 
-    let feeling = Math.round(response.data.main.feels_like);
+    let feeling = Math.round(response.data.temperature.feels_like);
     let htmlfeeling = document.querySelector("#feeling");
     htmlfeeling.innerHTML = `Feels like ${feeling}°`;
 
-    let humidity = Math.round(response.data.main.humidity);
+    let humidity = Math.round(response.data.temperature.humidity);
     let htmlhumidity = document.querySelector("#humidity");
-    htmlhumidity.innerHTML = `Humidity: ${feeling}%`;
+    htmlhumidity.innerHTML = `Humidity: ${humidity}%`;
 
-    let qualification = response.data.weather[0].description;
+    let qualification = response.data.condition.description;
     let htmlqualification = document.querySelector("#qualification");
     htmlqualification.innerHTML = `${qualification}`;
 
     let dateElement = document.querySelector("#date");
-    dateElement.innerHTML = changetime(response.data.dt * 1000);
+    dateElement.innerHTML = changetime(response.data.time * 1000);
+
+    let weathericon = response.data.weather[0].icon;
+    let htmlweathericon = document.querySelector("#weathericon");
+    htmlweathericon.setAttribute("src") = `${weathericon}`;
   }
 
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citytoweather}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${citytoweather}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showCityTemperature);
 }
