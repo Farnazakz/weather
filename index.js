@@ -80,8 +80,9 @@ function citysearch(event) {
     let htmlweathericon = document.querySelector("#weathericon");
     htmlweathericon.setAttribute(
       "src",
-      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weathericon}`
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weathericon}.png`
     );
+    htmlweathericon.setAttribute("alt", `${qualification}`);
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
