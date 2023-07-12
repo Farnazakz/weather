@@ -56,7 +56,7 @@ function citysearch(event) {
     let temperature = Math.round(response.data.temperature.current);
     let htmltemp = document.querySelector("#currenttemprature");
     htmltemp.innerHTML = temperature;
-    
+
     let wind = response.data.wind.speed;
     let htmlWind = document.querySelector("#wind");
     htmlWind.innerHTML = `Wind: ${wind}km/h`;
@@ -76,9 +76,12 @@ function citysearch(event) {
     let dateElement = document.querySelector("#date");
     dateElement.innerHTML = changetime(response.data.time * 1000);
 
-    let weathericon = response.data.weather[0].icon;
+    let weathericon = response.data.condition.icon;
     let htmlweathericon = document.querySelector("#weathericon");
-    htmlweathericon.setAttribute("src") = `${weathericon}`;
+    htmlweathericon.setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weathericon}`
+    );
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
