@@ -45,6 +45,7 @@ function converttocelicious(event) {
 function citysearch(event) {
   event.preventDefault();
   let searchinput = document.querySelector("#searchedcity");
+  console.log(searchinput);
   let newcity = document.querySelector("#city");
   let citytoweather = `${searchinput.value}`;
   newcity.innerHTML = citytoweather;
@@ -52,7 +53,6 @@ function citysearch(event) {
   //change city and getting real weather data//
 
   function showCityTemperature(response) {
-    console.log(response);
     let temperature = Math.round(response.data.temperature.current);
     let htmltemp = document.querySelector("#currenttemprature");
     htmltemp.innerHTML = temperature;
@@ -129,3 +129,4 @@ function retrievePosition(position) {
 
 let currentLocationTemp = document.querySelector("#btnsecondary");
 currentLocationTemp.addEventListener("click", findLocation);
+

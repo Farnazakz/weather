@@ -42,37 +42,71 @@
         <div class="col-2 currentbox">
           <div class="card" id="currentcard">
             <div class="card-body">
-              <p id="header">Today</p>
+              <div class="row">
+                <div class="col-12">
+                  <div class="searchbox">
+                    <form id="searching">
+                      <input
+                        class="col-8"
+                        type="text"
+                        placeholder="Search other cities"
+                        id="searchedcity"
+                        autocomplete="off"
+                      />
 
-              <div id="date">
-                <p>Thursday <br> 12:01</p>
-                
+                      <input
+                        type="submit"
+                        value="Search"
+                        class="btn btn-secondary btn-sm col-2 btnid1"
+                      />
+                    </form>
+                    <button
+                      type="button"
+                      id="btnsecondary"
+                      class="btn btn-secondary btn-sm col-3 btnid2"
+                    >
+                      current location
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              <h1 id="city">Tehran</h1>
-             
-              <img id="weathericon" src="w" alt="weathericon">
-              <small><p id="qualification">cloudy</p></small>
-              <h2 id="currenttemprature">2</h2>
+              <div id="searchingresult">
+                <br />
+                <br />
+                <p id="header">Today</p>
 
-              <div id="measure">
-                <a href="#" id="farenheit">
-                  <small>°F </small>
-                </a>
-                |
-                <a href="#" id="celicious">
-                  <small>°C </small>
-                </a>
-              </div>
+                <div id="date">
+                  <p>
+                    Thursday <br />
+                    12:01
+                  </p>
+                </div>
 
-              
-              <h3 id="feeling">Feels like <strong id="temp">3°</strong></h3>
-              <div id="details">
-                <small><p id="wind">Wind: 3km/h</p></small>
-                <small><p id="humidity">Humidity: 91%</p></small>
+                <h1 id="city">Tehran</h1>
+
+                <img id="weathericon" src="w" alt="weathericon" />
+                <small><p id="qualification">cloudy</p></small>
+                <h2 id="currenttemprature">2</h2>
+
+                <div id="measure">
+                  <a href="#" id="farenheit">
+                    <small>°F </small>
+                  </a>
+                  |
+                  <a href="#" id="celicious">
+                    <small>°C </small>
+                  </a>
+                </div>
+
+                <h3 id="feeling">Feels like <strong id="temp">3°</strong></h3>
+                <div id="details">
+                  <small><p id="wind">Wind: 3km/h</p></small>
+                  <small><p id="humidity">Humidity: 91%</p></small>
+                </div>
+                <br />
+                <br />
               </div>
-              <br />
-              <br />
             </div>
           </div>
         </div>
@@ -81,30 +115,7 @@
       <div class="row">
         <div class="col-2 containerbox">
           <div class="card" id="predictionforcast">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12 searchbox">
-                  <form id="searching">
-                    <input
-                      class="col-8"
-                      type="text"
-                      placeholder="Search other cities"
-                      id="searchedcity"
-                    />
-                    <input type="submit" value="Search" />
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </form>
-                  <br />
-                  <button
-                    type="button"
-                    id="btnsecondary"
-                    class="btn btn-secondary"
-                  >
-                    click to Check the wather in your current location
-                  </button>
-                </div>
-              </div>
-            </div>
+            <div class="card-body"></div>
 
             <br />
 
@@ -237,20 +248,18 @@
                   </div>
                 </div>
               </div>
+
+              <br />
+              <br />
             </div>
-           
-            <br />
-            <br />
-          </div>
             <small id="source">
-        <a href="https://github.com/Farnazakz/weather" target="_blank"
-          >Open-Source code </a
-        >, by Farnaz Akz
-      </small>
-        </div>
+              <a href="https://github.com/Farnazakz/weather" target="_blank"
+                >Open-Source code </a
+              >, by Farnaz Akz
+            </small>
+          </div>
         </div>
       </div>
-      
     </div>
   </body>
 
