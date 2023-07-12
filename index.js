@@ -1,5 +1,6 @@
-function changetime(timestamp) {
-  let now = new Date(timestamp);
+function changeTime(unixTimestamp) {
+  let now = new Date(unixTimestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -19,13 +20,6 @@ function changetime(timestamp) {
     realminute = `0${realminute}`;
   }
   return `${weekday} <br> ${realhour}:${realminute} `;
-}
-function formatDay(timestamp) {
-  let now = new Date(timestamp * 1000);
-  let weekday = now.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return days[weekday];
 }
 
 function converttofarenheit(event) {
@@ -75,7 +69,7 @@ function citysearch(event) {
     htmlqualification.innerHTML = `${qualification}`;
 
     let dateElement = document.querySelector("#date");
-    dateElement.innerHTML = changetime(response.data.time * 1000);
+    dateElement.innerHTML = changeTime(response.data.time * 1000);
 
     let weathericon = response.data.condition.icon;
     let htmlweathericon = document.querySelector("#weathericon");
@@ -84,6 +78,10 @@ function citysearch(event) {
       `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weathericon}.png`
     );
     htmlweathericon.setAttribute("alt", `${qualification}`);
+
+    let country = response.data.country;
+    let htmlcountry = document.querySelector("#country");
+    htmlcountry.innerHTML = `${country}`;
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
@@ -92,8 +90,6 @@ function citysearch(event) {
 
   axios.get(apiUrl).then(showCityTemperature);
 }
-
-changetime();
 
 let celsiusElement = null;
 

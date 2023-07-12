@@ -2,6 +2,7 @@ body {
   padding: 10px;
   font-family: "Signika Negative", sans-serif;
 }
+
 .temprature.active {
   color: #5b5b5a;
   cursor: default;
@@ -30,6 +31,12 @@ h1 {
   color: #413932;
   text-transform: capitalize;
 }
+#country {
+  line-height: 0.2;
+  font-size: 10px;
+  color: #413932;
+  text-transform: capitalize;
+}
 #qualification {
   color: #5b5b5a;
 }
@@ -45,7 +52,7 @@ h1 {
 }
 
 #feeling {
-  font-size: 24px;
+  font-size: 21px;
   color: #5b5b5a;
 }
 #temp {
