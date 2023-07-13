@@ -120,69 +120,12 @@
           <div class="card" id="predictionforcast">
             <div class="card-body"></div>
 
-            <br />
-
             <div class="col-12 weekdaysbox">
               <div class="card">
                 <div class="card-body">
                   <p id="header">see predictions</p>
 
-                  <div class="row days">
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">Sun</h6>
-                          <i class="fa-solid fa-bolt-lightning"></i>
-                          <p>2°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">Mon</h6>
-                          <i class="fa-solid fa-sun"></i>
-                          <p>4°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">Tue</h6>
-                          <i class="fa-solid fa-cloud-sun"></i>
-                          <p>3°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">Wed</h6>
-                          <i class="fa-solid fa-sun"></i>
-                          <p>3°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">Thu</h6>
-                          <i class="fa-solid fa-cloud-showers-heavy"></i>
-                          <p>1°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">More</h6>
-                          <br />
-                          <h6>...</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="row days" id="forcastdays"></div>
                 </div>
               </div>
             </div>
@@ -192,63 +135,7 @@
               <div class="card weekdaysbox">
                 <div class="card-body">
                   <p id="header">Hourly</p>
-
-                  <div class="row hours">
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">11:00</h6>
-                          <i class="fa-solid fa-cloud-showers-heavy"></i>
-                          <p>4°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">12</h6>
-                          <i class="fa-solid fa-cloud-sun"></i>
-                          <p>5°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">13</h6>
-                          <i class="fa-solid fa-cloud-sun"></i>
-                          <p>5°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">14</h6>
-                          <i class="fa-solid fa-sun"></i>
-                          <p>6°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">15</h6>
-                          <i class="fa-solid fa-sun"></i>
-                          <p>5°c</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="card card pfcards">
-                        <div class="card-body">
-                          <h6 class="wd">More</h6>
-                          <br />
-                          <h6>...</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="row hours" id="predictiondays"></div>
                 </div>
               </div>
 

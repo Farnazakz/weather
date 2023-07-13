@@ -22,6 +22,48 @@ function changeTime(unixTimestamp) {
   return `${weekday} <br> ${realhour}:${realminute} `;
 }
 
+function displayforcast() {
+  let forcastElement = document.querySelector("#forcastdays");
+  let forcastHTML = `<div class="row days" >`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      `<div class="col-2">
+                      <div class="card pfcards">
+                        <div class="card-body wcard">
+                          <h6 class="wd">${day}</h6>
+                          <i class="fa-solid fa-sun"></i>
+                          <p>4°c</p>
+                        </div>
+                      </div>
+                    </div> `;
+  });
+  forcastHTML = forcastHTML + `</div>`;
+  forcastElement.innerHTML = forcastHTML;
+}
+
+function displayprediction() {
+  let predictionElement = document.querySelector("#predictiondays");
+  let predictionHTML = `<div class="row hours">`;
+  let hours = ["11:00", "12:00", "13:00", "14:00"];
+  hours.forEach(function (hour) {
+    predictionHTML =
+      predictionHTML +
+      `<div class="col-2">
+                      <div class="card pfcards">
+                        <div class="card-body wcard">
+                          <h6 class="wd">${hour}</h6>
+                          <i class="fa-solid fa-cloud-showers-heavy"></i>
+                          <p>4°c</p>
+                        </div>
+                      </div>
+                    </div> `;
+  });
+  predictionHTML = predictionHTML + `</div>`;
+  predictionElement.innerHTML = predictionHTML;
+}
+
 function converttofarenheit(event) {
   event.preventDefault();
 
@@ -128,3 +170,5 @@ function retrievePosition(position) {
 
 let currentLocationTemp = document.querySelector("#btnsecondary");
 currentLocationTemp.addEventListener("click", findLocation);
+displayforcast();
+displayprediction();

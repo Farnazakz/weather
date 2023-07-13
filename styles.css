@@ -129,7 +129,12 @@ h1 {
   font-weight: 500;
 }
 .pfcards {
+  left: -10px;
   height: 100px;
+  width: 80px;
+}
+.wcard:hover {
+  background-color: #e2ebf3;
 }
 
 .btnid {
