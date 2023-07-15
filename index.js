@@ -121,7 +121,6 @@ function citysearch(event) {
     htmlcountry.innerHTML = `${country}`;
 
     getforcast(response.data.city);
-    getprediction(response.data.city);
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";

@@ -3,13 +3,6 @@ body {
   font-family: "Signika Negative", sans-serif;
 }
 
-.temprature.active {
-  color: #5b5b5a;
-  cursor: default;
-}
-.temprature.active:hover {
-  text-decoration: none;
-}
 #searching {
   display: block;
   margin-left: auto;
@@ -43,7 +36,6 @@ h1 {
 #qualification.firstletter {
   text-transform: capitalize;
 }
-
 #date {
   line-height: 1.2;
   font-weight: 600;
@@ -75,14 +67,7 @@ h1 {
 }
 #currentcard {
   background: linear-gradient(0.45turn, #fafafa, #9abee2, #5a7da9);
-  height: 550px;
-  width: 600px;
-}
-
-#predictionforcast {
-  display: block;
-  margin: 0 auto;
-  height: 700px;
+  height: 850px;
   width: 600px;
 }
 
@@ -97,12 +82,7 @@ h1 {
 .current-icon {
   font-size: 100px;
 }
-.containerbox {
-  display: block;
-  margin: 0 auto;
-  right: 170px;
-  text-align: center;
-}
+
 .searchbox {
   display: inline-flex;
   width: 600px;
@@ -119,6 +99,12 @@ h1 {
   width: max-content;
   left: -40px;
 }
+
+.hey {
+  background: linear-gradient(0.45turn, #fafafa, #9abee2, #5a7da9);
+  
+}
+
 .wd {
   font-size: 9px;
   font-weight: 600;
@@ -129,29 +115,24 @@ h1 {
   font-weight: 500;
 }
 .pfcards {
-  left: -10px;
-  height: 100px;
-  width: 80px;
+  text-align: center;
+  right: -30px;
+  height: 120px;
+  width: 87px;
 }
 .wcard:hover {
   background-color: #e2ebf3;
 }
 
-.btnid {
-  display: block;
-  margin-right: auto;
-}
-
-.hourbox {
-  display: block;
-  margin: 0 auto;
-}
-.hours {
-  text-align: center;
-  font-size: 10px;
-}
-
 #source {
   text-align: center;
   font-size: 10px;
+}
+.weekdaysbox {
+ 
+
+  background-blend-mode: overlay;
+  text-align: center;
+  width: 600px;
+  height: 150px;
 }
