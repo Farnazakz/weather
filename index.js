@@ -22,22 +22,51 @@ function changeTime(unixTimestamp) {
   return `${weekday} <br> ${realhour}:${realminute} `;
 }
 
-function displayforcast() {
+function formatForcastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function getforcast(response) {
+  let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${response}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayforcast);
+}
+
+function displayforcast(response) {
+  let forcast = response.data.daily;
+  console.log(response.data.daily);
   let forcastElement = document.querySelector("#forcastdays");
   let forcastHTML = `<div class="row days" >`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
-      `<div class="col-2">
+
+  forcast.forEach(function (forcastday, index) {
+    if (0 < index && index < 6) {
+      forcastHTML =
+        forcastHTML +
+        `<div class="col-2">
                       <div class="card pfcards">
                         <div class="card-body wcard">
-                          <h6 class="wd">${day}</h6>
-                          <i class="fa-solid fa-sun"></i>
-                          <p>4°c</p>
+                          <h6 class="wd">${formatForcastDays(
+                            forcastday.time
+                          )}</h6>
+                          <img src="${forcastday.condition.icon_url}" alt="${
+          forcastday.condition.description
+        }" width="50px">
+                         <span>${Math.round(
+                           forcastday.temperature.maximum
+                         )}°C</span>
+                         <span>${Math.round(
+                           forcastday.temperature.minimum
+                         )}°C </span>
+
                         </div>
                       </div>
                     </div> `;
+    }
   });
   forcastHTML = forcastHTML + `</div>`;
   forcastElement.innerHTML = forcastHTML;
@@ -89,6 +118,7 @@ function citysearch(event) {
 
   function showCityTemperature(response) {
     celsiusElement = Math.round(response.data.temperature.current);
+    console.log(response);
 
     let temperature = Math.round(response.data.temperature.current);
     let htmltemp = document.querySelector("#currenttemprature");
@@ -124,6 +154,8 @@ function citysearch(event) {
     let country = response.data.country;
     let htmlcountry = document.querySelector("#country");
     htmlcountry.innerHTML = `${country}`;
+
+    getforcast(response.data.city);
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
