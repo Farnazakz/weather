@@ -72,41 +72,6 @@ function displayforcast(response) {
   forcastElement.innerHTML = forcastHTML;
 }
 
-function displayprediction() {
-  let predictionElement = document.querySelector("#predictiondays");
-  let predictionHTML = `<div class="row hours">`;
-  let hours = ["11:00", "12:00", "13:00", "14:00"];
-  hours.forEach(function (hour) {
-    predictionHTML =
-      predictionHTML +
-      `<div class="col-2">
-                      <div class="card pfcards">
-                        <div class="card-body wcard">
-                          <h6 class="wd">${hour}</h6>
-                          <i class="fa-solid fa-cloud-showers-heavy"></i>
-                          <p>4°c</p>
-                        </div>
-                      </div>
-                    </div> `;
-  });
-  predictionHTML = predictionHTML + `</div>`;
-  predictionElement.innerHTML = predictionHTML;
-}
-
-function converttofarenheit(event) {
-  event.preventDefault();
-
-  let degree = document.querySelector("#currenttemprature");
-  degree.innerHTML = Math.round((celsiusElement * 9) / 5 + 32);
-}
-
-function converttocelicious(event) {
-  event.preventDefault();
-
-  let degree = document.querySelector("#currenttemprature");
-  degree.innerHTML = celsiusElement;
-}
-
 function citysearch(event) {
   event.preventDefault();
   let searchinput = document.querySelector("#searchedcity");
@@ -156,6 +121,7 @@ function citysearch(event) {
     htmlcountry.innerHTML = `${country}`;
 
     getforcast(response.data.city);
+    getprediction(response.data.city);
   }
 
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
@@ -165,16 +131,8 @@ function citysearch(event) {
   axios.get(apiUrl).then(showCityTemperature);
 }
 
-let celsiusElement = null;
-
 let searchelement = document.querySelector("#searching");
 searchelement.addEventListener("submit", citysearch);
-
-let farenhitTemp = document.querySelector("#farenheit");
-farenhitTemp.addEventListener("click", converttofarenheit);
-
-let celiciousTemp = document.querySelector("#celicious");
-celiciousTemp.addEventListener("click", converttocelicious);
 
 // current city and getting real weather data//
 function findLocation() {
@@ -202,5 +160,3 @@ function retrievePosition(position) {
 
 let currentLocationTemp = document.querySelector("#btnsecondary");
 currentLocationTemp.addEventListener("click", findLocation);
-displayforcast();
-displayprediction();
