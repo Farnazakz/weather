@@ -6,6 +6,11 @@ body {
   text-align: left;
   font-size: 9px;
 }
+#searchedcity {
+  border-radius: 4px;
+  border-color: #5b5b5a;
+  border-width: 1.5px;
+}
 
 #searching {
   display: block;
@@ -75,12 +80,23 @@ h1 {
   width: 600px;
 }
 
-#measure {
+#measure1 {
   display: block;
   position: relative;
-  top: -10px;
+  top: -42px;
+  right: -25px;
   font-size: 13px;
   color: #5a5654;
+}
+
+#measure2 {
+  display: block;
+  position: relative;
+  font-weight: 600;
+  top: -33px;
+  right: -70px;
+  font-size: 12px;
+  color: #5b5b5a;
 }
 
 .current-icon {
@@ -121,7 +137,7 @@ h1 {
 .pfcards {
   text-align: center;
   right: -30px;
-  height: 120px;
+  height: 130px;
   width: 87px;
 }
 .wcard:hover {
@@ -129,8 +145,11 @@ h1 {
 }
 
 .weekdaysbox {
-  background-blend-mode: overlay;
   text-align: center;
   width: 600px;
   height: 150px;
 }
+#minw {
+  color: #878584;
+}
+

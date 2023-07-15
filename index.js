@@ -58,10 +58,10 @@ function displayforcast(response) {
         }" width="50px">
                          <span>${Math.round(
                            forcastday.temperature.maximum
-                         )}°C</span>
-                         <span>${Math.round(
+                         )}<small>°C</small></span>
+                         <span id="minw">${Math.round(
                            forcastday.temperature.minimum
-                         )}°C </span>
+                         )}<small >°C</small> </span>
 
                         </div>
                       </div>
@@ -94,7 +94,7 @@ function citysearch(event) {
 
     let feeling = Math.round(response.data.temperature.feels_like);
     let htmlfeeling = document.querySelector("#feeling");
-    htmlfeeling.innerHTML = `Feels like ${feeling}°`;
+    htmlfeeling.innerHTML = ` ${feeling}`;
 
     let humidity = Math.round(response.data.temperature.humidity);
     let htmlhumidity = document.querySelector("#humidity");
@@ -138,7 +138,6 @@ function findLocation() {
 }
 
 function showWeather(response) {
-  
   let realTemp = Math.round(response.data.temperature.current);
   let htmlTemp = document.querySelector("#currenttemperature");
   htmlTemp.innerHTML = `${realTemp}`;
@@ -181,7 +180,6 @@ function showWeather(response) {
 }
 
 function retrievePosition(position) {
-  
   let apiKey = "5f00d10b8t4ae2b91cc4f26o7dd3659d";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -193,3 +191,4 @@ function retrievePosition(position) {
 
 let currentLocationTemp = document.querySelector("#btnsecondary");
 currentLocationTemp.addEventListener("click", findLocation);
+temp;
