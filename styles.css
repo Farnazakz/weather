@@ -2,6 +2,10 @@ body {
   padding: 10px;
   font-family: "Signika Negative", sans-serif;
 }
+#source {
+  text-align: left;
+  font-size: 9px;
+}
 
 #searching {
   display: block;
@@ -100,9 +104,9 @@ h1 {
   left: -40px;
 }
 
-.hey {
-  background: linear-gradient(0.45turn, #fafafa, #9abee2, #5a7da9);
-  
+.forcastbox {
+  background: linear-gradient(0.45turn, #80a4cb, #6e91bb, #6083ae);
+  border: none;
 }
 
 .wd {
@@ -124,13 +128,7 @@ h1 {
   background-color: #e2ebf3;
 }
 
-#source {
-  text-align: center;
-  font-size: 10px;
-}
 .weekdaysbox {
- 
-
   background-blend-mode: overlay;
   text-align: center;
   width: 600px;
